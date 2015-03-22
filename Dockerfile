@@ -11,7 +11,7 @@ RUN sed -i -e"s/bind-address = 127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.
 
 # Mount data dir
 RUN ["mkdir", "/data_mysql"]
-VOLUME /data_mysql:/data_mysql
+VOLUME ["/data_mysql"]
 
 EXPOSE 3306
 CMD ["/usr/bin/mysqld_safe"]
